@@ -6,11 +6,11 @@ with app.app_context():
     from.import db
     db.init_app(app)
 
-@app.route('/canciones')
+@app.route('/genero')
 def musica():
     base_de_datos = db.get_db()
     consulta = """
-        SELECT name FROM tracks
+        SELECT name FROM genres
         ;
         """
 

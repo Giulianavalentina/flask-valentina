@@ -1,9 +1,9 @@
 <!DOCTYPE html><html><head>
-    <title>Lista de canciones </title>
+    <title>Lista de generos</title>
     <link rel="stylesheet" type="text/css"
     href="{{ url_for('static', filename='style.css')}}">
     <head><body>
-        <h1>canciones</h1>
+        <h1>Generos</h1>
         <ul>
             {% for m in musica %}
             <li>{{ m ['name'] }} </li>
