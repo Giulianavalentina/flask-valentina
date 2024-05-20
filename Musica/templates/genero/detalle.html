@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Genero:</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Genero {{genero['name']}}</h1>
+    <ul>
+      {% for t in canciones %}
+      <li>{{ t['name'] }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
+</head>
+<body>
+    <main>
+      <h1>Genero {{genero['name']}}</h1>
+      <table class="content-table"></table>
+      <thead>
+        <tr>
+          <th>Genero</th>
+        </tr>
+      </thead>
+    </main>
+</body>
