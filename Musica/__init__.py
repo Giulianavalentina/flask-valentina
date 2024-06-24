@@ -5,15 +5,14 @@ app = Flask(__name__)
 with app.app_context():
     from.import db
     db.init_app(app)
+@app.route('/')
+def hello ():
+ return 'hola mundo!' 
 
-@app.route('/genero')
-def musica():
-    base_de_datos = db.get_db()
-    consulta = """
-        SELECT name FROM genres
-        ;
-        """
 
-    resultado = base_de_datos.execute(consulta)
-    lista_de_resultados = resultado.fetchall()
-    return render_template("musica.html", musica=lista_de_resultados)
+from . import genero
+app.register_blueprint(genero.bp)
+
+from . import album
+app.register_blueprint(album.bp)
+

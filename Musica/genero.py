@@ -10,10 +10,10 @@ def generos():
     """
     resultado = base_de_datos.execute(consulta)
     lista_de_resultado = resultado.fetchall()
-    return render_template("genero/genero.html",generos=lista_de_resultado)
+    return render_template("genero.html",generos=lista_de_resultado)
 
-@bp.route('detalle/<init:id>')
-def generos(id):
+@bp.route('detalle/<int:id>')
+def detGeneros(id):
     base_de_datos = db.get_db()
     consulta = """
         SELECT name FROM genres
@@ -21,19 +21,14 @@ def generos(id):
         ORDER by name;
         
     """
-    consulta 2 = """
+    consulta2 = """
         SELECT g.name, t.name FROM genres g
-        JOIN tracks t on t.GenreId = t.GenreId = g.GenreId
+        JOIN tracks t on  t.GenreId = g.GenreId
     """
     resultado = base_de_datos.execute(consulta)
     lista_de_resultado = resultado.fetchone()
     resul_detalle = base_de_datos.execute(consulta2)
     lista_generos = resul_detalle.fetchall()
-    return render_template("genero/genero.html",generos=lista_de_resultado, detalle=lista_generos)
+    return render_template("genero.html",gener=lista_de_resultado, detalle=lista_generos)
 
-    from flask import Blueprint, render_template
-    from . import db
-    resultado = base_de_datos.execute(consulta)
-    lista_de_resultado = resultado.fetchall()
-    return render_template("genero/genero.html",generos=lista_de_resultado)
 
