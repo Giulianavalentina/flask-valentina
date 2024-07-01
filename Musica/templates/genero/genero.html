@@ -12,7 +12,10 @@
     <h1>Generos</h1>
     <ul>
       {% for ge in generos %}
-      <li>{{ ge['name'] }}</li>
+      <li>
+        <a href="{{url_for('genero.detGeneros', id=ge['GenreId'])}}">
+      {{ ge['name'] }}</a>
+    </li>
       {% endfor %}
     </ul>
   </body>

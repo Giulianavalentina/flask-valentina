@@ -8,7 +8,7 @@ def albums():
          SELECT Title, AlbumId FROM albums
         ORDER by Title;
     """
-    resultado = base_de_datos.execute(consulta, (id,))
+    resultado = base_de_datos.execute(consulta)
     lista_de_resultado = resultado.fetchall()
     return render_template("album.html",albums=lista_de_resultado)
 
