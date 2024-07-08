@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lista de Generos</title>
+    <title>{% block title %}Lista de Generos {% endblock %}</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -9,7 +9,8 @@
     />
   </head>
   <body>
-    <h1>Generos</h1>
+    <h1>>{% block header %} Generos {% endblock %}</h1>
+    >{% block content %}>{% endblock %}
     <ul>
       {% for ge in generos %}
       <li>{{ ge['name'] }}</li>
